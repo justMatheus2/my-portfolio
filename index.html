@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/responsive.css">
+
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="src/image/my-logo.png" alt="MS Logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle-darkmode" onclick="toggleDarkMode()">Dark Mode</button>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Hi, I'm Matheus Sousa</h2>
+    <p>A passionate Web Developer crafting modern, responsive websites. Currently diving into React!</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Animated Developer" class="animation">
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>Short description of the project.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JS</p>
+        <a href="#">View Demo</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Short description of the project.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JS</p>
+        <a href="#">View Demo</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Short description of the project.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JS</p>
+        <a href="#">View Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+<script src="src/js/script.js"></script>
+</body>
+
+</html>
