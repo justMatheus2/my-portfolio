@@ -75,13 +75,30 @@
 
     <section id="contact">
       <h2>Contact Me</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+      <form class="form" id="form">
+
+        <div class="form-control">
+        <label for="name"></label>
+        <input id="name" type="text" placeholder="Your Name"/>
+        <small></small>
+      </div>
+
+      <div class="form-control">
+        <label for="email"></label>
+        <input id="email" type="email" placeholder="Your Email"/>
+        <small></small>
+      </div>
+
+      <div class="form-control">
+        <label for="message"></label>
+        <textarea id="message" placeholder="Your Message" rows="5"></textarea>
+        <small></small>
+      </div>
+
         <button type="submit">Send Message</button>
       </form>
     </section>
     <script src="src/js/script.js"></script>
+    <script src="src/js/form.js"></script>
   </body>
 </html>

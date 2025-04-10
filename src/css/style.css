@@ -113,9 +113,11 @@
     text-decoration: none;
   }
 
-  form {
+  .form {
     display: flex;
     flex-direction: column;
+    width: 100vw;
+    padding: 20px;
   }
 
   input, textarea {
@@ -126,12 +128,13 @@
   }
 
   button {
-    background-color: var(--header-text);
+    background-color: var(--accent-color);
     color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+    width: 80%;
   }
 
   button:hover {
@@ -146,3 +149,40 @@
     border-radius: 5px;
     font-size: 0.9em;
   }
+  .form-control {
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+  }
+  .form-control input,
+.form-control textarea {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+  
+  .form-control.success input,
+  .form-control.success textarea {
+    border: 2px solid green;
+  }
+  
+  .form-control.error input,
+  .form-control.error textarea {
+    border: 2px solid red;
+  }
+  
+  .form-control small {
+    color: red;
+    visibility: hidden;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .form-control.error small {
+    visibility: visible;
+  }
+  
