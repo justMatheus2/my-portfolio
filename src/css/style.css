@@ -126,7 +126,7 @@
   }
 
   button {
-    background-color: var(--accent-color);
+    background-color: var(--header-text);
     color: #fff;
     border: none;
     padding: 10px;
