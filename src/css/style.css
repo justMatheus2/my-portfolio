@@ -135,7 +135,7 @@
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
   }
 
   button:hover {
@@ -157,7 +157,7 @@
   }
   .form-control input,
 .form-control textarea {
-  width: 80%;
+  width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 2px solid #ccc;
