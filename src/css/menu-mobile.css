@@ -60,6 +60,7 @@
     display: flex;
     gap: 1rem;
     list-style: none;
+    max-width: 90vw;
   }
   
   .header nav ul a {

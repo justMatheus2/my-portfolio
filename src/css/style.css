@@ -118,6 +118,7 @@
     flex-direction: column;
     width: 100vw;
     padding: 20px;
+    width: 100%;
   }
 
   input, textarea {
