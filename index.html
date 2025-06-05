@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta name="description" content="Portfolio of Matheus Sousa, a passionate Web Developer">
+    <title>Matheus Sousa | Web Developer</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/css/reset.css" />
     <link rel="stylesheet" href="src/css/style.css" />
     <link rel="stylesheet" href="src/css/responsive.css" />
@@ -20,7 +22,8 @@
       <img class="logo" src="src/image/my-logo.png" alt="MS Logo" />
       <nav>
         <button class="toggle-darkmode" onclick="toggleDarkMode()">
-          Dark Mode
+          <i class="fas fa-moon dark-icon"></i>
+          <i class="fas fa-sun light-icon"></i>
         </button>
         <input type="checkbox" id="menu-hamburguer" />
         <label for="menu-hamburguer" class="menu">
@@ -37,67 +40,104 @@
     </header>
 
     <section id="home">
-      <h2>Hi, I'm Matheus Sousa</h2>
-      <p>
-        A passionate Web Developer crafting modern, responsive websites.
-        Currently diving into React!
-      </p>
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
-        alt="Animated Developer"
-        class="animation"
-      />
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Hi, I'm <span class="highlight">Matheus Sousa</span></h1>
+          <h2>Web Developer</h2>
+          <p class="intro">
+            A passionate Web Developer crafting modern, responsive websites.
+            Currently diving into React!
+          </p>
+          <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-container">
+            <div class="circle-animation"></div>
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Matheus Sousa"
+              class="profile-image"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2 class="section-title">My <span class="highlight">Projects</span></h2>
       <div class="projects">
         <div class="project-card">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/300x200?text=Advice+Generator" alt="Advice Generator">
+          </div>
           <h3>Generator Advice</h3>
           <p>An smart Advice generator.</p>
           <p><strong>Tech:</strong> HTML, CSS, JS</p>
-          <a href="https://github.com/justMatheus2/generateadvice.git" target="_blank">View Demo</a>
+          <div class="project-links">
+            <a href="https://github.com/justMatheus2/generateadvice.git" target="_blank" class="demo-btn">View Demo</a>
+            <a href="https://github.com/justMatheus2/generateadvice.git" target="_blank" class="code-btn">View Code</a>
+          </div>
         </div>
         <div class="project-card">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/300x200?text=Project+Two" alt="Project Two">
+          </div>
           <h3>Project Two</h3>
           <p>Short description of the project.</p>
           <p><strong>Tech:</strong> HTML, CSS, JS</p>
-          <a href="#">View Demo</a>
+          <div class="project-links">
+            <a href="#" target="_blank" class="demo-btn">View Demo</a>
+            <a href="#" target="_blank" class="code-btn">View Code</a>
+          </div>
         </div>
         <div class="project-card">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/300x200?text=Project+Three" alt="Project Three">
+          </div>
           <h3>Project Three</h3>
           <p>Short description of the project.</p>
           <p><strong>Tech:</strong> HTML, CSS, JS</p>
-          <a href="#">View Demo</a>
+          <div class="project-links">
+            <a href="#" target="_blank" class="demo-btn">View Demo</a>
+            <a href="#" target="_blank" class="code-btn">View Code</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Contact Me</h2>
+      <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
       <form class="form" id="form">
+        <div class="form-control">
+          <label for="name"></label>
+          <input id="name" type="text" placeholder="Your Name"/>
+          <small></small>
+        </div>
 
         <div class="form-control">
-        <label for="name"></label>
-        <input id="name" type="text" placeholder="Your Name"/>
-        <small></small>
-      </div>
+          <label for="email"></label>
+          <input id="email" type="email" placeholder="Your Email"/>
+          <small></small>
+        </div>
 
-      <div class="form-control">
-        <label for="email"></label>
-        <input id="email" type="email" placeholder="Your Email"/>
-        <small></small>
-      </div>
-
-      <div class="form-control">
-        <label for="message"></label>
-        <textarea id="message" placeholder="Your Message" rows="5"></textarea>
-        <small></small>
-      </div>
+        <div class="form-control">
+          <label for="message"></label>
+          <textarea id="message" placeholder="Your Message" rows="5"></textarea>
+          <small></small>
+        </div>
 
         <button type="submit">Send Message</button>
       </form>
     </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Matheus Sousa. All rights reserved.</p>
+    </footer>
+    
     <script src="src/js/script.js"></script>
     <script src="src/js/form.js"></script>
   </body>
