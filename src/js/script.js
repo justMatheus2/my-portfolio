@@ -26,7 +26,7 @@ menuLinks.forEach(link => {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^=""]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
     
@@ -57,7 +57,6 @@ const animateOnScroll = () => {
   });
 };
 
-// Set initial state for animation
 window.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.project-card, .section-title, .hero-text, .hero-image');
   
@@ -67,8 +66,105 @@ window.addEventListener('DOMContentLoaded', () => {
     element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   });
   
-  // Trigger animation after a short delay
   setTimeout(animateOnScroll, 100);
 });
 
 window.addEventListener('scroll', animateOnScroll);
+
+// typeWriter animation
+function typeWriterEffect() {
+  const phrases = [
+    "Web Developer",
+    "Frontend Specialist",
+    "React Enthusiast",
+    "Matheus Sousa"
+  ];
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const element = document.querySelector('.typing-effect');
+  
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (isDeleting) {
+      element.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      element.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+    }
+    
+    let typeSpeed = 100;
+    
+    if (isDeleting) {
+      typeSpeed /= 2;
+    }
+    
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      typeSpeed = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typeSpeed = 500;
+    }
+    
+    setTimeout(type, typeSpeed);
+  }
+  
+  setTimeout(type, 1000);
+}
+
+window.addEventListener('DOMContentLoaded', typeWriterEffect);
+
+// Back to top button
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    backToTopButton.classList.add('visible');
+  } else {
+    backToTopButton.classList.remove('visible');
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Loading screen
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.body.classList.add('loaded');
+    document.querySelector('.loading-screen').style.display = 'none';
+  }, 1000);
+});
+// skills animation
+function animateSkills() {
+  const skills = document.querySelectorAll('.skill-item');
+  
+  skills.forEach((skill, index) => {
+    skill.style.opacity = '0';
+    skill.style.transform = 'translateY(20px)';
+    skill.style.transition = `all 0.5s ease ${index * 0.1}s`;
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  skills.forEach(skill => {
+    observer.observe(skill);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', animateSkills);
