@@ -1,0 +1,22 @@
+.projects {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projects-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects-subtitle {
+  margin-bottom: 3rem;
+  opacity: 0.75;
+  max-width: 600px;
+}
+
+.projects-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}

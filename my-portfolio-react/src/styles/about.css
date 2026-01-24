@@ -1,0 +1,62 @@
+.about {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  width: 220px;
+  border-radius: 12px;
+  border: 2px solid #1e293b;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+  display: block;
+  margin: 0 auto;
+}
+
+.about-text {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* FADE-IN */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
