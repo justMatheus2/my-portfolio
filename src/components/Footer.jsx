@@ -16,11 +16,11 @@ function Footer() {
           <h4>Contact</h4>
           <ul>
             <li>
-              <a href="mailto:your.email@example.com">Email</a>
+              <a href="mailto:sousamatheus191999@gmail.com">Email</a>
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/YOUR-LINKEDIN"
+                href="https://www.linkedin.com/in/matheus-sousa-8b6608374/ "
                 target="_blank"
                 rel="noopener noreferrer"
               >
