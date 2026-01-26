@@ -1,60 +1,67 @@
-# Personal Portfolio – Front-End Developer
+# My Portfolio
 
-This is my personal portfolio website, created to showcase my skills, projects, and learning journey as a **Front-End Developer**.
+🚀 Live Demo  
+https://justmatheus2.github.io/my-portfolio/
 
-I am currently focused on building real-world applications using modern front-end technologies and continuously improving my skills.
+## 👋 About Me
 
----
+I am a Front-End Developer based in Ireland, focused on building clean, responsive, and user-friendly web interfaces.  
+I have experience working with modern web technologies and I am continuously improving my skills through hands-on projects.
 
-## 🚀 Live Demo
-🔗 [View Portfolio Live](https://justmatheus2.github.io/my-portfolio/)  
-*(replace with your live link if different)*
-
----
-
-## 🧑‍💻 About Me
-
-Hi! I'm Matheus, a **Front-End Developer based in Ireland** 🇮🇪.  
-I have completed modules in **HTML, CSS, JavaScript, and React**, and I am currently studying **TypeScript**.
-
-I am actively seeking **Junior / Entry-Level Front-End Developer** opportunities where I can grow, learn, and contribute to real projects.
+This portfolio was built to showcase my work, technical skills, and development approach.
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-- HTML5 (Semantic HTML)
-- CSS3 (Flexbox, Responsive Design)
-- JavaScript (ES6+)
-- React
-- Git & GitHub
-
----
-
-## 📂 Features
-
-- Responsive layout for mobile, tablet, and desktop
-- Clean and simple UI
-- Sections for About, Projects, Skills, and Contact
-- Easy navigation and accessibility-focused structure
+- HTML5  
+- CSS3 (Flexbox, Responsive Design)  
+- JavaScript (ES6+)  
+- React  
+- React Router  
+- Vite  
+- Git & GitHub  
 
 ---
 
-## 📦 Projects
+## ✨ Features
 
-This portfolio will be continuously updated with real-world projects, including:
-
-- React applications
-- UI clones
-- Booking and dashboard systems
-- Projects using TypeScript
+- Responsive layout (desktop & mobile)
+- Modern UI with clean design
+- Smooth animations (fade-in effects)
+- Projects section with real examples
+- Contact section integrated in the footer
+- Deployed with GitHub Pages
 
 ---
 
-## 🖥️ Run Locally
+## 📂 Projects
 
-If you want to run this project locally:
+Each project focuses on solving real-world problems and improving best practices such as component structure, state management, and responsive design.
 
-```bash
-git clone https://github.com/justMatheus2/my-portfolio.git
-cd my-portfolio
+More projects will be added as I continue learning and growing as a developer.
+
+---
+
+## 🚀 Deployment
+
+This project was built using **React + Vite** and deployed to **GitHub Pages**.
+
+Key deployment considerations:
+- Custom Vite `base` configuration
+- SPA routing handled with `HashRouter`
+- Production build optimized with Vite
+
+---
+
+## 📬 Contact
+
+- Email: sousamatheus191999@gmail.com 
+- GitHub: https://github.com/justMatheus2  
+- LinkedIn: https://www.linkedin.com/in/matheus-sousa-8b6608374/  
+
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.

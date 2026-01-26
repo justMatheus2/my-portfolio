@@ -6,6 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+# Dependency directories
+node_modules/
+.pnp/
+.pnp.js
+.vite.config.js
 
 node_modules
 dist
