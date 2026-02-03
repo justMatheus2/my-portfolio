@@ -4,11 +4,13 @@ import logo from "../assets/logoms.png";
 
 function Header() {
   return (
-    <header className="header">
+   <header className="header">
       <div className="header-container">
-        <img src={logo} alt="Matheus logo" className="logoms" 
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
-        <span className="logo">Matheus.dev</span>
+        <div className="brand">
+          <img src={logo} alt="MS logo" className="logo" />
+          <span className="brand-name">Matheus Sousa</span>
+        </div>
+
         <Nav />
       </div>
     </header>

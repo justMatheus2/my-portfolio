@@ -7,22 +7,36 @@
 .header-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+} 
+
 .logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  cursor: pointer;
+}
+
+/*.logo {
   font-weight: 600;
   font-size: 1.2rem;
   color: #38bdf8;
-}
+}*/
 
-.logoms {
-  height: 48px;
-  width: auto;
-  cursor: pointer;
+.brand-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e5e7eb;
+  letter-spacing: 0.5px;
 }
 
 @keyframes slideDown {
@@ -39,3 +53,10 @@
 .header {
   animation: slideDown 0.8s ease-out;
 }
+
+@media (max-width: 480px) {
+  .brand-name {
+    display: none;
+  }
+}
+
