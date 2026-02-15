@@ -1,0 +1,18 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="700" rx="24" fill="#0B1120"/>
+<rect x="30" y="35" width="1140" height="90" rx="18" fill="#1E293B"/>
+<rect x="70" y="68" width="200" height="24" rx="12" fill="#38BDF8"/>
+<rect x="760" y="64" width="340" height="30" rx="15" fill="#334155"/>
+<rect x="30" y="150" width="300" height="520" rx="16" fill="#111827"/>
+<rect x="350" y="150" width="820" height="520" rx="16" fill="#111827"/>
+<rect x="70" y="190" width="220" height="24" rx="12" fill="#334155"/>
+<rect x="70" y="235" width="180" height="16" rx="8" fill="#334155"/>
+<rect x="70" y="265" width="180" height="16" rx="8" fill="#334155"/>
+<rect x="390" y="190" width="230" height="210" rx="14" fill="#1E293B"/>
+<rect x="645" y="190" width="230" height="210" rx="14" fill="#1E293B"/>
+<rect x="900" y="190" width="230" height="210" rx="14" fill="#1E293B"/>
+<rect x="390" y="430" width="230" height="210" rx="14" fill="#1E293B"/>
+<rect x="645" y="430" width="230" height="210" rx="14" fill="#1E293B"/>
+<rect x="900" y="430" width="230" height="210" rx="14" fill="#1E293B"/>
+<text x="55" y="638" fill="#94A3B8" font-family="Arial, sans-serif" font-size="34">E-commerce Storefront UI Preview</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="700" rx="24" fill="#020617"/>
+<rect x="40" y="40" width="250" height="620" rx="18" fill="#0F172A"/>
+<rect x="320" y="40" width="840" height="620" rx="18" fill="#0F172A"/>
+<rect x="80" y="100" width="170" height="26" rx="13" fill="#38BDF8"/>
+<rect x="80" y="165" width="130" height="16" rx="8" fill="#334155"/>
+<rect x="80" y="197" width="130" height="16" rx="8" fill="#334155"/>
+<rect x="80" y="229" width="130" height="16" rx="8" fill="#334155"/>
+<rect x="360" y="90" width="300" height="30" rx="15" fill="#38BDF8"/>
+<rect x="360" y="145" width="240" height="170" rx="16" fill="#111827"/>
+<rect x="620" y="145" width="240" height="170" rx="16" fill="#111827"/>
+<rect x="880" y="145" width="240" height="170" rx="16" fill="#111827"/>
+<rect x="360" y="345" width="760" height="280" rx="16" fill="#111827"/>
+<polyline points="400,560 500,480 620,520 740,430 860,470 980,390 1080,450" stroke="#22D3EE" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="355" y="665" fill="#94A3B8" font-family="Arial, sans-serif" font-size="34">Analytics Dashboard UI Preview</text>
+</svg>
