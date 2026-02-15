@@ -1,6 +1,5 @@
 import ProjectCard from "../components/ProjectCard";
 import "../styles/projects.css";
-import bkimage from "../assets/Booking_app.png";
 
 function Projects() {
   return (
