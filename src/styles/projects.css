@@ -1,22 +1,39 @@
 .projects {
-  padding: 4rem 2rem;
-  max-width: 1100px;
+  padding: 5rem 2rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .projects-title {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  margin-bottom: 0.75rem;
 }
 
 .projects-subtitle {
-  margin-bottom: 3rem;
-  opacity: 0.75;
-  max-width: 600px;
+  margin-bottom: 2.5rem;
+  opacity: 0.8;
+  max-width: 680px;
+  line-height: 1.6;
 }
 
 .projects-container {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.projects-container > * {
+  flex: 1 1 calc(50% - 1.5rem);
+  min-width: min(100%, 320px);
+}
+
+@media (max-width: 900px) {
+  .projects {
+    padding-inline: 1.2rem;
+  }
+
+  .projects-container > * {
+    flex: 1 1 100%;
+  }
 }
