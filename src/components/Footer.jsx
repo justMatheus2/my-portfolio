@@ -1,4 +1,24 @@
+import { HiOutlineEnvelope } from "react-icons/hi2";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import "../styles/footer.css";
+
+const contactItems = [
+  {
+    label: "Email",
+    href: "mailto:sousamatheus191999@gmail.com",
+    icon: HiOutlineEnvelope,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/matheus-sousa-8b6608374/",
+    icon: FaLinkedinIn,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/justMatheus2",
+    icon: FaGithub,
+  },
+];
 
 function Footer() {
   return (
@@ -15,27 +35,16 @@ function Footer() {
         <div className="footer-contact">
           <h4>Contact</h4>
           <ul>
-            <li>
-              <a href="mailto:sousamatheus191999@gmail.com">Email</a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/matheus-sousa-8b6608374/ "
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/justMatheus2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </li>
+            {contactItems.map(({ label, href, icon: Icon }) => (
+              <li key={label}>
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                  <span className="contact-icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span>{label}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

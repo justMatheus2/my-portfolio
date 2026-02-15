@@ -15,7 +15,7 @@
 }
 
 .footer-brand {
-  max-width: 400px;
+  max-width: 420px;
 }
 
 .footer-brand h3 {
@@ -25,7 +25,7 @@
 
 .footer-brand p {
   opacity: 0.8;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .footer-contact h4 {
@@ -35,20 +35,40 @@
 .footer-contact ul {
   list-style: none;
   padding: 0;
-}
-
-.footer-contact li {
-  margin-bottom: 0.7rem;
+  display: grid;
+  gap: 0.8rem;
 }
 
 .footer-contact a {
   text-decoration: none;
   color: #e5e7eb;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.contact-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #334155;
+  color: #38bdf8;
+  background: #0b1220;
+  font-size: 0.95rem;
 }
 
 .footer-contact a:hover {
-  color: #38bdf8;
+  color: #7dd3fc;
+  transform: translateX(3px);
+}
+
+.footer-contact a:hover .contact-icon {
+  border-color: #38bdf8;
+  background: #0e2237;
 }
 
 .footer-bottom {
@@ -59,10 +79,14 @@
   opacity: 0.7;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+  }
+
+  .footer-contact a {
+    justify-content: center;
   }
 }
