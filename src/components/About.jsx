@@ -1,5 +1,5 @@
 import "../styles/about.css";
-import profile from "../assets/profile_ft.jpeg";
+import profile from "../assets/new_logo.png";
 
 function About() {
   return (
