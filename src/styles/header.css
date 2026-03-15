@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-} 
+}
 
 .logo {
   height: 40px;
@@ -54,9 +54,35 @@
   animation: slideDown 0.8s ease-out;
 }
 
+.header-tagline {
+  margin-top: 0.35rem;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.header-cta {
+  display: inline-block;
+  margin-top: 0.45rem;
+  background: #38bdf8;
+  color: #020617;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.header-cta:hover,
+.header-cta:focus-visible {
+  background: #7dd3fc;
+  transform: translateY(-1px);
+}
+
 @media (max-width: 480px) {
   .brand-name {
     display: none;
   }
 }
-

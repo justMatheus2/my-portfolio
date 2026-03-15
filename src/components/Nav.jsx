@@ -9,7 +9,8 @@ function Nav() {
       <button
         className="hamburger"
         onClick={() => setOpen(!open)}
-        aria-label="Toggle menu"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
       >
         <span />
         <span />
@@ -18,10 +19,14 @@ function Nav() {
 
       <ul className={`nav-links ${open ? "open" : ""}`}>
         <li>
-          <a href="#about" onClick={() => setOpen(false)}>About</a>
+          <a href="#about" onClick={() => setOpen(false)}>
+            About
+          </a>
         </li>
         <li>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          <a href="#contact" onClick={() => setOpen(false)}>
+            Contact
+          </a>
         </li>
       </ul>
     </nav>

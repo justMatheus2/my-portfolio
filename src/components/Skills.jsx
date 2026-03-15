@@ -1,17 +1,7 @@
 import "../styles/skills.css";
+import { skills } from "../lib/portfolioData";
 
 function Skills() {
-  const skills = [
-    "HTML5",
-    "CSS3",
-    "JavaScript",
-    "React",
-    "TypeScript",
-    "Git",
-    "GitHub",
-    "Responsive Design",
-  ];
-
   return (
     <section className="skills fade-in">
       <h2>Skills</h2>

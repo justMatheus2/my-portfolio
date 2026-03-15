@@ -4,11 +4,19 @@ import logo from "../assets/Logoms.png";
 
 function Header() {
   return (
-   <header className="header">
+    <header className="header">
       <div className="header-container">
-        <div className="brand">
-          <img src={logo} alt="MS logo" className="logo" />
-          <span className="brand-name">Matheus Sousa</span>
+        <div>
+          <div className="brand">
+            <img src={logo} alt="MS logo" className="logo" />
+            <span className="brand-name">Matheus Sousa</span>
+          </div>
+          <p className="header-tagline">
+            📌 Seeking Junior Front-End role with a focus on clean interfaces.
+          </p>
+          <a className="header-cta" href="#projects">
+            See projects
+          </a>
         </div>
 
         <Nav />

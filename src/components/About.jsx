@@ -5,7 +5,11 @@ function About() {
   return (
     <section id="about" className="about fade-in">
       <div className="about-container">
-        <img src={profile} alt="Matheus profile" className="about-image" />
+        <img
+          src={profile}
+          alt="Photo of Matheus Sousa, front-end developer"
+          className="about-image"
+        />
 
         <div className="about-text">
           <h2>About Me</h2>
