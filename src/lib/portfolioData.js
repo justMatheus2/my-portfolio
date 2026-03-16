@@ -1,6 +1,6 @@
 import bookingImage from "../assets/Booking_App.png";
 import ecommerceImage from "../assets/project-ecommerce.svg";
-import weatherImage from "../assets/project-weather.svg";
+import weatherImage from "../assets/Weather_app.png";
 import dashboardImage from "../assets/project-dashboard.svg";
 
 export const skills = [
@@ -58,8 +58,8 @@ export const projectItems = [
     tech: ["React", "API Integration", "Flexbox"],
     image: weatherImage,
     imageAlt: "Weather dashboard interface preview",
-    live: "https://example.com/weather-demo",
-    github: "https://github.com/justMatheus2",
+    live: "https://justmatheus2.github.io/weather-app/",
+    github: "https://github.com/justMatheus2/weather-app.git",
   },
   {
     title: "Analytics Dashboard",

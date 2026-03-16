@@ -37,13 +37,13 @@ function ProjectCard({
         <p>{description}</p>
 
         <p className="project-subtitle">
-          <strong>Tecnologias principais:</strong> {mainTech.join(", ")}
+          <strong>mainTech:</strong> {mainTech.join(", ")}
         </p>
         <p className="project-challenge">
-          <strong>Desafio:</strong> {challenge}
+          <strong>challenge:</strong> {challenge}
         </p>
         <p className="project-result">
-          <strong>Resultado:</strong> {result}
+          <strong>result:</strong> {result}
         </p>
 
         <ul className="tech-stack">
