@@ -20,7 +20,7 @@ function About() {
           </p>
           <p>
             I enjoy turning ideas into clean, functional interfaces and I’m
-            currently looking for a Junior Front-End Developer role.
+            currently dividing into Back-End. I’m passionate about learning new technologies and improving my skills to create better user experiences.
           </p>
         </div>
       </div>
