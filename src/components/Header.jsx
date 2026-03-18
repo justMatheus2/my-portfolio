@@ -12,7 +12,7 @@ function Header() {
             <span className="brand-name">Matheus Sousa</span>
           </div>
           <p className="header-tagline">
-            📌 Seeking Junior Front-End role with a focus on clean interfaces.
+            📌 Seeking Junior role with a focus on clean interfaces.
           </p>
           <a className="header-cta" href="#projects">
             See projects

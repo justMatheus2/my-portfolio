@@ -1,5 +1,5 @@
 import bookingImage from "../assets/Booking_App.png";
-import ecommerceImage from "../assets/project-ecommerce.svg";
+import ecommerceImage from "../assets/E-commerce-page.png";
 import weatherImage from "../assets/Weather_app.png";
 import dashboardImage from "../assets/project-dashboard.svg";
 
@@ -37,15 +37,15 @@ export const projectItems = [
       "A responsive storefront with product cards, filters, and cart-ready architecture.",
     difficulty: "Intermediate",
     duration: "12 days",
-    mainTech: ["React", "Vite", "Responsive UI"],
+    mainTech: ["React", "Vite", "TypeScript", "Responsive UI"],
     challenge:
       "Design a layout that works well across desktop and mobile with fast filters.",
     result: "Shopping interface with clear navigation and attractive visuals.",
     tech: ["React", "Vite", "Responsive UI"],
     image: ecommerceImage,
     imageAlt: "E-commerce storefront interface preview",
-    live: "https://example.com/ecommerce-demo",
-    github: "https://github.com/justMatheus2",
+    live: "https://justmatheus2.github.io/e-commerce-page/",
+    github: "https://github.com/justMatheus2/e-commerce-page.git",
   },
   {
     title: "Weather Dashboard",
