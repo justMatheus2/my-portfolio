@@ -1,251 +1,137 @@
-# 🎨 Website Profissional 100% Editável
+# MS TECH Portfolio
 
-> Um website de web developer moderno, responsivo e **totalmente personalizável** sem precisar mexer no código!
+Portfolio institucional da MS TECH, um estúdio de web design e desenvolvimento focado em criar sites modernos, responsivos e orientados a resultado.
 
-![Status](https://img.shields.io/badge/Status-Pronto%20para%20Edi%C3%A7%C3%A3o-success)
-![Editável](https://img.shields.io/badge/Editabilidade-100%25-blue)
-![Documentação](https://img.shields.io/badge/Docs-Completa-green)
+O projeto apresenta serviços, trabalhos recentes, habilidades, informações sobre a marca e formas de contato em uma landing page construída com React, Vite, TypeScript e Tailwind CSS.
 
----
+## Visão Geral
 
-## ✨ Características
+Este site foi criado para comunicar a proposta da MS TECH de forma direta: unir design e desenvolvimento para entregar experiências digitais bonitas, rápidas e funcionais.
 
-- ✅ **100% Editável** - Mude tudo sem mexer no código
-- ✅ **Totalmente Responsivo** - Funciona em todos os dispositivos
-- ✅ **Animações Modernas** - Efeitos suaves e profissionais
-- ✅ **Fácil de Usar** - Documentação completa incluída
-- ✅ **Pronto para Produção** - Deploy imediato
+Principais seções:
 
----
+- Hero com chamada principal e botões de navegação
+- Serviços oferecidos
+- Portfólio com projetos e links externos
+- Diferenciais da MS TECH
+- Skills técnicas
+- Seção About Us
+- Citações de marca
+- Contato com Instagram e e-mail
+- Botão de voltar ao topo
 
-## 🚀 Início Rápido
+## Tecnologias
 
-### 1️⃣ Edite o Conteúdo
-```typescript
-// Abra: src/config/content.ts
-// Mude textos, imagens, projetos, etc.
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Motion
+- Lucide React
+- React Icons
+
+## Estrutura Principal
+
+```txt
+src/
+  assets/              Imagens e vídeos do projeto
+  components/          Componentes visuais da página
+  config/
+    content.ts         Textos, links, projetos e dados do site
+    theme.ts           Cores principais do tema
+  styles/              Arquivos globais de estilo
+  App.tsx              Ordem das seções da página
+  main.tsx             Entrada da aplicação
 ```
 
-### 2️⃣ Personalize as Cores
-```typescript
-// Abra: src/config/theme.ts
-// Altere a paleta de cores
+## Onde Editar
+
+Textos, projetos, links e redes sociais:
+
+```txt
+src/config/content.ts
 ```
 
-### 3️⃣ Salve e Veja!
-Abra no navegador e veja suas mudanças! 🎉
+Cores principais do site:
 
----
-
-## 📚 Documentação
-
-### 🎯 Começar Agora
-- 📖 **[LEIA-ME-PRIMEIRO.md](LEIA-ME-PRIMEIRO.md)** - Introdução completa
-- 🚀 **[src/config/README.md](src/config/README.md)** - Guia rápido de edição
-
-### 📋 Guias Completos
-- 📚 **[EDITAR-SITE.md](EDITAR-SITE.md)** - Guia detalhado passo a passo
-- 💡 **[src/config/EXEMPLO-EDICAO.md](src/config/EXEMPLO-EDICAO.md)** - Exemplos práticos
-- 🗺️ **[src/config/ESTRUTURA-ARQUIVOS.md](src/config/ESTRUTURA-ARQUIVOS.md)** - Mapa dos arquivos
-
-### ⚡ Referências Rápidas
-- 📄 **[COMO-EDITAR.txt](COMO-EDITAR.txt)** - Referência rápida
-- 📑 **[src/config/INDEX.md](src/config/INDEX.md)** - Índice completo
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-seu-website/
-│
-├── 📝 README.md                    ← Você está aqui
-├── 📖 LEIA-ME-PRIMEIRO.md          ← Comece por aqui!
-├── 📚 EDITAR-SITE.md               ← Guia completo
-├── 📄 COMO-EDITAR.txt              ← Referência rápida
-│
-├── src/
-│   ├── config/                     ← 🎯 ARQUIVOS EDITÁVEIS
-│   │   ├── content.ts              ← Textos e conteúdo
-│   │   ├── theme.ts                ← Cores e tema
-│   │   ├── INDEX.md                ← Índice de ajuda
-│   │   ├── README.md               ← Guia rápido
-│   │   ├── EXEMPLO-EDICAO.md       ← Exemplos práticos
-│   │   └── ESTRUTURA-ARQUIVOS.md   ← Mapa detalhado
-│   │
-│   └── app/
-│       ├── App.tsx                 ← Aplicação principal
-│       └── components/             ← Componentes React
-│
-└── package.json                    ← Dependências
+```txt
+src/config/theme.ts
 ```
 
----
+Ordem das seções:
 
-## 🎯 O Que Você Pode Editar
+```txt
+src/App.tsx
+```
 
-### ✏️ Em `src/config/content.ts`:
-- 🏢 Nome da empresa/logo
-- 📝 Todos os textos do site
-- 🖼️ Imagens de todas as seções
-- 💼 Lista de serviços
-- 🎨 Projetos do portfólio
-- 👤 Textos "Sobre nós"
-- 🛠️ Skills e tecnologias
-- 💬 Citações motivacionais
-- 📧 Email e redes sociais
-- 🔗 Links de navegação
+Imagem e layout do About Us:
 
-### 🎨 Em `src/config/theme.ts`:
-- 🌈 Cor principal (primária)
-- 🎨 Cor secundária
-- 🖌️ Cores de fundo
-- ✍️ Cores de texto
-- 🔲 Cores de bordas
+```txt
+src/components/About.tsx
+```
 
----
+Cards e botões dos projetos:
 
-## 🎓 Como Usar Este Projeto
+```txt
+src/components/Portfolio.tsx
+```
 
-### Para Iniciantes
-1. Leia: **[LEIA-ME-PRIMEIRO.md](LEIA-ME-PRIMEIRO.md)**
-2. Abra: `src/config/content.ts`
-3. Mude o nome da empresa
-4. Mude o email
-5. Salve e veja!
+## Como Rodar Localmente
 
-### Para Personalização Completa
-1. Leia: **[EDITAR-SITE.md](EDITAR-SITE.md)**
-2. Consulte: **[src/config/EXEMPLO-EDICAO.md](src/config/EXEMPLO-EDICAO.md)**
-3. Edite `content.ts` e `theme.ts`
-4. Personalize tudo!
-
----
-
-## 🎨 Seções Incluídas
-
-- 🏠 **Hero** - Apresentação principal impactante
-- 💼 **Services** - Lista de serviços oferecidos
-- 🖼️ **Portfolio** - Showcase de projetos
-- 👤 **About** - Sobre você/sua empresa
-- ⭐ **Why Us** - Seus diferenciais
-- 🛠️ **Skills** - Tecnologias e habilidades
-- 💬 **Quotes** - Citações inspiracionais
-- 📧 **Contact** - Formulário de contato
-- 📱 **Footer** - Rodapé com links
-
----
-
-## 🛠️ Tecnologias
-
-- ⚛️ React 18.3
-- 🎨 Tailwind CSS v4
-- ✨ Motion (Framer Motion)
-- ⚡ Vite 6
-- 💙 TypeScript
-- 🎭 Lucide Icons
-
----
-
-## ⚡ Comandos Úteis
+Instale as dependências:
 
 ```bash
-# Instalar dependências
-pnpm install
-
-# Executar em desenvolvimento
-pnpm dev
-
-# Build para produção
-pnpm build
+npm install
 ```
 
----
+Inicie o servidor de desenvolvimento:
 
-## 📝 Edição Rápida
-
-### Mudar Nome da Empresa
-```typescript
-// src/config/content.ts
-export const siteConfig = {
-  siteNamePart1: 'SEU',     // ← Mude aqui
-  siteNamePart2: 'NOME',    // ← Mude aqui
-}
+```bash
+npm run dev
 ```
 
-### Mudar Cores
-```typescript
-// src/config/theme.ts
-export const colors = {
-  primary: '#e91e63',      // ← Rosa → Mude aqui
-  secondary: '#00bcd4',    // ← Ciano → Mude aqui
-}
+Gere a versão de produção:
+
+```bash
+npm run build
 ```
 
-### Adicionar Projeto
-```typescript
-// src/config/content.ts → portfolioContent.projects
+## Projetos do Portfólio
+
+Os projetos são configurados em `src/config/content.ts`, dentro de `portfolioContent.projects`.
+
+Cada projeto pode ter:
+
+- título
+- descrição
+- desafio
+- categoria
+- imagem
+- link externo
+- tecnologias usadas
+
+Exemplo:
+
+```ts
 {
-  id: 7,  // Próximo ID
-  title: 'Seu Projeto',
+  id: 1,
+  title: 'E-Commerce Platform',
+  description: 'A modern e-commerce platform built with React and Vite.',
   category: 'Web Development',
-  image: 'URL_DA_IMAGEM',
-  technologies: ['React', 'TypeScript']
+  image: 'src/assets/e-commerce.png',
+  link: 'https://justmatheus2.github.io/e-commerce-page/',
+  technologies: ['React', 'Vite', 'TypeScript']
 }
 ```
 
----
+## Build
 
-## ✅ Checklist de Personalização
+O projeto foi validado com:
 
-- [ ] Nome da empresa atualizado
-- [ ] Cores personalizadas
-- [ ] Título e descrição principais alterados
-- [ ] Email e redes sociais corretos
-- [ ] Projetos do portfólio adicionados
-- [ ] Serviços atualizados
-- [ ] Seção "Sobre" personalizada
-- [ ] Skills/tecnologias atualizadas
-- [ ] Imagens trocadas
-- [ ] Todos os links testados
+```bash
+npm run build
+```
 
----
+## Observações
 
-## 🆘 Suporte
-
-### Precisa de Ajuda?
-
-1. 📖 Leia a documentação em `src/config/`
-2. 💡 Veja exemplos em `EXEMPLO-EDICAO.md`
-3. 🗺️ Consulte o mapa em `ESTRUTURA-ARQUIVOS.md`
-
-### Problemas Comuns
-
-| Problema | Solução |
-|----------|---------|
-| Site não atualiza | Recarregue com Ctrl+F5 |
-| Erro de sintaxe | Verifique aspas e vírgulas |
-| Imagem não aparece | Verifique a URL |
-| Cor não muda | Use formato #RRGGBB |
-
----
-
-## 📄 Licença
-
-Este projeto é totalmente seu para personalizar e usar como quiser! 🎉
-
----
-
-## 🎉 Pronto para Começar?
-
-### 👉 Próximo Passo: Abra [LEIA-ME-PRIMEIRO.md](LEIA-ME-PRIMEIRO.md)
-
----
-
-<div align="center">
-
-**Desenvolvido com ❤️ usando React + Tailwind + Motion**
-
-🌟 **100% Personalizável** • 📱 **Totalmente Responsivo** • ⚡ **Fácil de Usar**
-
-</div>
+Arquivos e pastas como `node_modules`, `dist`, `.env`, `.claude` e configurações locais de editor são ignorados pelo Git através do `.gitignore`.
