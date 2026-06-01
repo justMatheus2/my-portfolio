@@ -90,7 +90,7 @@ export const portfolioContent = {
       description: 'A modern e-commerce platform built with React and Vite, featuring a responsive design and seamless user experience.',
       challenge: 'Creating a fast and responsive online store that can handle high traffic and provide a smooth shopping experience.',
       category: 'Web Development',
-      image: 'src/assets/e-commerce.png',
+      image: './src/assets/e-commerce.png',
       link: 'https://justmatheus2.github.io/e-commerce-page/',
       technologies: ['React', 'Vite', 'TypeScript', 'Responsive UI']
     },
@@ -110,7 +110,7 @@ export const portfolioContent = {
       category: 'Web Development',
       description: 'A custom booking system designed to automate scheduling and improve customer experience for a service-based business.',
       challenge: 'Developing a user-friendly and efficient booking system that can handle multiple services, time slots and customer interactions.',
-      image: 'src/assets/booking-app.png',
+      image: './src/assets/booking-app.png',
       link: 'https://justmatheus2.github.io/barbershop_booking_app',
       technologies: ['React', 'JavaScript', 'CSS', 'Responsive Design']
     },
@@ -120,7 +120,7 @@ export const portfolioContent = {
       description: 'Weather panel showing current conditions and forecast cards. Fast weather dashboard with easy-to-read insights.',
       challenge: 'Consume external API and display data in readable card format.',
       category: 'Weather Dashboard',
-      image: 'src/assets/weather-app.png',
+      image: './src/assets/weather-app.png',
       link: 'https://justmatheus2.github.io/weather-app/',
       technologies: ['React', 'API Integration', 'Responsive Design', 'Flexbox']
     },
@@ -155,7 +155,7 @@ export const aboutContent = {
   title2Part1: 'MS',
   title2Part2: 'TECH',
 
-  image: 'src/assets/about-us.png',
+  image: './src/assets/about-us.png',
 
   paragraphs: [
     'MS TECH is a web design and development studio focused on creating beautiful digital experiences. We combine creativity with technical expertise to deliver complete digital solutions.',
