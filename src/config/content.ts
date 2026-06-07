@@ -107,7 +107,7 @@ export const portfolioContent = {
       challenge: 'Presenting complex financial data in a clear, intuitive way while keeping performance high with frequent data updates.',
       category: 'Web Application',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      link: '#',
+      link: 'https://financial-dashboard-delta-flame.vercel.app/',
       technologies: ['React', 'TypeScript', 'Chart.js']
     },
     {
