@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { quotesContent } from '../config/content';
+import { colors } from '../config/theme';
 
 type QuoteProps = {
   variant: 'quote1' | 'quote2';
@@ -9,27 +10,26 @@ export default function Quote({ variant }: QuoteProps) {
   const isQuote1 = variant === 'quote1';
 
   return (
-    <section className={`py-16 sm:py-20 md:py-24 relative overflow-hidden ${
-      isQuote1
-        ? 'bg-gradient-to-r from-[#1a0a2e] via-[#2a0a3e] to-[#0a1a2a]'
-        : 'bg-[#0a0a1a]'
-    }`}>
-      <div className={`absolute inset-0 ${
-        isQuote1
-          ? 'bg-gradient-to-br from-[#e91e63]/20 via-transparent to-[#00bcd4]/20'
-          : 'bg-gradient-to-r from-transparent via-[#e91e63]/10 to-transparent'
-      }`}></div>
+    <section className={`relative overflow-hidden py-16 sm:py-20 md:py-24 ${isQuote1 ? 'bg-[#202A39]' : 'bg-[#10151D]'}`}>
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: isQuote1
+            ? `radial-gradient(ellipse at 50% 100%, ${colors.primary}13 0%, transparent 65%)`
+            : `linear-gradient(90deg, transparent, ${colors.primary}08, transparent)`
+        }}
+      />
 
-      <div className="max-w-5xl mx-auto px-6 relative text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+      <div className="relative mx-auto max-w-5xl px-5 text-center sm:px-6">
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase leading-tight"
+          className="text-xl font-medium leading-snug tracking-[-0.03em] text-[#D8E0EA] sm:text-2xl md:text-3xl lg:text-4xl"
         >
-          {quotesContent[variant]}
-        </motion.h2>
+          “{quotesContent[variant]}”
+        </motion.p>
       </div>
     </section>
   );
