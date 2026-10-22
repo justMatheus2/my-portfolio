@@ -6,7 +6,7 @@ import { colors } from '../config/theme';
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-[#10151D] pt-20">
+    <section id="top" className="relative flex min-h-[92svh] items-center overflow-hidden bg-[#10151D] pt-20">
       <div className="absolute inset-0 opacity-[0.075] grayscale">
         <ImageWithFallback
           src={heroContent.backgroundImage}
