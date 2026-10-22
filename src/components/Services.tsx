@@ -1,4 +1,4 @@
-import { Code, Palette, Calendar, Zap } from 'lucide-react';
+import { Code, Palette, Calendar, Zap, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { servicesContent } from '../config/content';
 import { colors } from '../config/theme';
@@ -11,73 +11,63 @@ const iconMap: Record<string, typeof Palette> = {
 };
 
 export default function Services() {
-
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#0a0a1a] to-[#1a0a2e] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l to-transparent"
-        style={{ backgroundImage: `linear-gradient(to left, ${colors.primary}1a, transparent)` }}
-      ></div>
+    <section className="relative overflow-hidden bg-[#141C29] py-20 sm:py-24 md:py-28">
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-1/3" style={{ background: `linear-gradient(270deg, ${colors.primary}0D, transparent)` }} />
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-12 max-w-2xl sm:mb-14"
         >
-          <div className="inline-block">
-            <div className="flex items-center gap-4 mb-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wider">
-                {servicesContent.title}
-              </h2>
-              <div className="w-32 h-1" style={{ backgroundColor: colors.primary }}></div>
-            </div>
-          </div>
-          <p className="text-gray-300 text-lg mt-6 max-w-3xl mx-auto">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: colors.secondary }}>
+            What we do
+          </p>
+          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-[#F5F7FA] sm:text-4xl md:text-5xl">
+            {servicesContent.title}
+          </h2>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-[#AAB4C2] sm:text-lg">
             {servicesContent.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid gap-4 sm:grid-cols-2 lg:gap-5">
           {servicesContent.services.map((service, index) => {
-            const IconComponent = iconMap[service.icon];
+            const IconComponent = iconMap[service.icon] ?? Code;
             return (
-              <motion.div
+              <motion.article
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.45, delay: index * 0.07 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-br from-[#2a1a3e]/80 to-[#1a0a2e]/80 backdrop-blur-sm p-8 rounded-lg border transition-colors cursor-pointer"
-                style={{
-                  borderColor: colors.borderPrimary
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = colors.borderPrimaryHover;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = colors.borderPrimary;
-                }}
+                className="group rounded-2xl border bg-[#171D27] p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-[#1A2330] sm:p-8"
+                style={{ borderColor: colors.borderPrimary }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = colors.borderPrimaryHover; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = colors.borderPrimary; }}
               >
-                <IconComponent className="w-12 h-12 mb-4" style={{ color: colors.primary }} />
-                <h3 className="text-xl font-bold text-white mb-3 italic">{service.title}</h3>
-                <p className="text-gray-300">{service.description}</p>
-              </motion.div>
+                <div className="mb-8 flex items-start justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#A8B7CB]/15 bg-[#202A39]" style={{ color: colors.secondary }}>
+                    <IconComponent size={21} strokeWidth={1.7} />
+                  </div>
+                  <span className="text-xs tracking-[0.12em] text-[#657286]">0{index + 1}</span>
+                </div>
+                <h3 className="mb-3 text-xl font-semibold tracking-[-0.02em] text-[#F5F7FA]">{service.title}</h3>
+                <p className="max-w-md text-sm leading-relaxed text-[#AAB4C2] sm:text-base">{service.description}</p>
+              </motion.article>
             );
           })}
         </div>
 
-        <div className="text-center">
-          <a
-            href={servicesContent.ctaButton.link}
-            className="inline-block px-8 py-3 rounded-full text-white transition-colors"
-            style={{ backgroundColor: colors.secondary }}
-          >
-            {servicesContent.ctaButton.text}
-          </a>
-        </div>
+        <a
+          href={servicesContent.ctaButton.link}
+          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#C5D2E2] transition-colors hover:text-white"
+        >
+          {servicesContent.ctaButton.text} <ArrowUpRight size={17} />
+        </a>
       </div>
     </section>
   );
