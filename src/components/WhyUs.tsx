@@ -1,4 +1,4 @@
-import { Palette, Code2, TrendingUp } from 'lucide-react';
+import { Palette, Code2, TrendingUp, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { whyUsContent } from '../config/content';
 import { colors } from '../config/theme';
@@ -11,59 +11,57 @@ const iconMap: Record<string, typeof Palette> = {
 
 export default function WhyUs() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#2a0a3e] via-[#1a0a2e] to-[#0a1a2a] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#e91e63]/10 via-transparent to-[#00bcd4]/10"></div>
+    <section className="relative overflow-hidden bg-[#141C29] py-20 sm:py-24 md:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#10151D]/35 via-transparent to-[#10151D]/45" />
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mx-auto mb-12 max-w-2xl text-center sm:mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wider mb-6">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: colors.secondary }}>
+            The MS TECH approach
+          </p>
+          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-[#F5F7FA] sm:text-4xl md:text-5xl">
             {whyUsContent.title}
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            {whyUsContent.subtitle} <span style={{ color: colors.primary }}>{whyUsContent.subtitleHighlight}</span> {whyUsContent.subtitleEnd}
+          <p className="mt-5 text-base leading-relaxed text-[#AAB4C2] sm:text-lg">
+            {whyUsContent.subtitle} <span style={{ color: colors.secondary }}>{whyUsContent.subtitleHighlight}</span> {whyUsContent.subtitleEnd}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+        <div className="mb-10 grid gap-4 md:grid-cols-3 lg:gap-5">
           {whyUsContent.reasons.map((reason, index) => {
             const IconComponent = iconMap[reason.icon];
             return (
-              <motion.div
+              <motion.article
                 key={reason.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="text-center p-8 rounded-lg bg-gradient-to-br from-[#2a1a3e]/60 to-[#1a0a2e]/60 border border-white/10 hover:border-[#e91e63]/50 transition-all"
+                className="rounded-2xl border bg-[#171D27] p-6 sm:p-8"
+                style={{ borderColor: colors.borderPrimary }}
               >
-                <div
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
-                  style={{ backgroundColor: `${colors.primary}33` }}
-                >
-                  <IconComponent className="w-8 h-8" style={{ color: colors.primary }} />
+                <div className="mb-7 flex h-11 w-11 items-center justify-center rounded-xl border border-[#A8B7CB]/15 bg-[#202A39]" style={{ color: colors.secondary }}>
+                  <IconComponent size={21} strokeWidth={1.7} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{reason.title}</h3>
-                <p className="text-gray-300">{reason.description}</p>
-              </motion.div>
+                <h3 className="mb-3 text-xl font-semibold text-[#F5F7FA]">{reason.title}</h3>
+                <p className="text-sm leading-relaxed text-[#AAB4C2] sm:text-base">{reason.description}</p>
+              </motion.article>
             );
           })}
         </div>
 
-        <div className="text-center">
-          <a
-            href={whyUsContent.ctaButton.link}
-            className="inline-block px-8 py-3 rounded-full text-white transition-colors"
-            style={{ backgroundColor: colors.secondary }}
-          >
-            {whyUsContent.ctaButton.text}
-          </a>
-        </div>
+        <a
+          href={whyUsContent.ctaButton.link}
+          className="inline-flex items-center gap-2 text-sm font-medium text-[#C5D2E2] transition-colors hover:text-white"
+        >
+          {whyUsContent.ctaButton.text} <ArrowUpRight size={17} />
+        </a>
       </div>
     </section>
   );
