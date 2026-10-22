@@ -5,48 +5,46 @@ import { colors } from '../config/theme';
 
 export default function About() {
   return (
-    <section id="about" className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#1a0a2e] via-[#0a0a1a] to-[#1a0a2e] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l to-transparent"
-        style={{ backgroundImage: `linear-gradient(to left, ${colors.primary}1a, transparent)` }}
-      ></div>
+    <section id="about" className="relative overflow-hidden bg-[#141C29] py-20 sm:py-24 md:py-28">
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2" style={{ background: `linear-gradient(270deg, ${colors.primary}0D, transparent)` }} />
 
-      <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/3] rounded-lg overflow-hidden border bg-[#0a0a1a]/60 flex items-center justify-center"
-              style={{ borderColor: `${colors.primary}4d` }}
-            >
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl border bg-[#171D27] p-3 sm:p-4" style={{ borderColor: colors.borderPrimary }}>
               <ImageWithFallback
                 src={aboutContent.image}
-                alt="Developer"
-                className="w-full h-full object-contain"
+                alt="MS TECH developer at work"
+                className="h-full w-full rounded-xl object-cover"
               />
+            </div>
+            <div className="absolute -bottom-4 right-5 rounded-xl border border-[#A8B7CB]/20 bg-[#10151D] px-4 py-3 shadow-xl sm:right-8">
+              <span className="block text-[10px] uppercase tracking-[0.15em] text-[#8794A5]">Our focus</span>
+              <span className="mt-1 block text-sm font-medium text-[#E8EDF4]">Thoughtful digital work</span>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white uppercase tracking-wider">
-                {aboutContent.title1}
-              </h2>
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold">
-                <span className="text-white">{aboutContent.title2Part1}</span>
-                <span style={{ color: colors.primary }}>{aboutContent.title2Part2}</span>
-              </div>
-            </div>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: colors.secondary }}>
+              A little about us
+            </p>
+            <h2 className="text-3xl font-semibold tracking-[-0.04em] text-[#F5F7FA] sm:text-4xl md:text-5xl">
+              {aboutContent.title1}{' '}
+              <span>{aboutContent.title2Part1}</span><span style={{ color: colors.secondary }}>{aboutContent.title2Part2}</span>
+            </h2>
 
-            <div className="space-y-4 text-gray-300 leading-relaxed">
+            <div className="mt-6 space-y-4 text-sm leading-relaxed text-[#AAB4C2] sm:text-base">
               {aboutContent.paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
