@@ -19,60 +19,45 @@ const iconMap: Record<string, IconType> = {
 
 export default function Skills() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#0a0a1a] to-[#1a0a2e] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#e91e63]/5 via-transparent to-[#00bcd4]/5"></div>
+    <section className="relative overflow-hidden bg-[#10151D] py-20 sm:py-24 md:py-28">
+      <div className="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 0%, ${colors.primary}0B 0%, transparent 62%)` }} />
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-12 max-w-2xl sm:mb-14"
         >
-          <div className="inline-block">
-            <div className="flex items-center gap-4 mb-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wider">
-                {skillsContent.title}
-              </h2>
-              <div className="w-32 h-1" style={{ backgroundColor: colors.primary }}></div>
-            </div>
-          </div>
-          <p className="text-gray-300 text-lg mt-6">
-            {skillsContent.subtitle}
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: colors.secondary }}>
+            Tools & technologies
           </p>
+          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-[#F5F7FA] sm:text-4xl md:text-5xl">
+            {skillsContent.title}
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-[#AAB4C2] sm:text-lg">{skillsContent.subtitle}</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           {skillsContent.skills.map((skill, index) => {
             const Icon = iconMap[skill.icon];
             return (
               <motion.div
                 key={skill.id}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: index * 0.04 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="group aspect-square flex flex-col items-center justify-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-[#2a1a3e]/60 to-[#1a0a2e]/60 border transition-colors cursor-pointer"
+                className="group flex min-h-32 flex-col items-center justify-center rounded-2xl border bg-[#171D27] px-3 py-6 transition-colors hover:bg-[#1A2330] sm:min-h-36 sm:py-7"
                 style={{ borderColor: colors.borderPrimary }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = colors.borderPrimaryHover;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = colors.borderPrimary;
-                }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = colors.borderPrimaryHover; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = colors.borderPrimary; }}
               >
-                <div className="mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
-                  {Icon && (
-                    <Icon
-                      size={48}
-                      color={skill.color}
-                      aria-label={skill.name}
-                    />
-                  )}
+                <div className="mb-3 transition-transform group-hover:-translate-y-0.5">
+                  {Icon && <Icon size={34} color={colors.secondary} aria-label={skill.name} />}
                 </div>
-                <div className="text-white text-xs sm:text-sm text-center">{skill.name}</div>
+                <div className="text-center text-xs font-medium text-[#D2D9E3] sm:text-sm">{skill.name}</div>
               </motion.div>
             );
           })}

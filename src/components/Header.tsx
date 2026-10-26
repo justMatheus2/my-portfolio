@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { siteConfig, navigationLinks } from '../config/content';
 import { colors } from '../config/theme';
 
@@ -11,49 +11,66 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <div className="text-2xl font-bold tracking-wider">
-            <span className="text-white">{siteConfig.siteNamePart1}</span>
-            <span style={{ color: colors.secondary }}>{siteConfig.siteNamePart2}</span>
-          </div>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[#10151D]/85 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
+        <a href="#top" className="inline-flex items-center gap-2" aria-label="MS TECH home">
+          <span className="text-xl font-semibold tracking-[-0.04em] text-[#F5F7FA] sm:text-2xl">
+            {siteConfig.siteNamePart1}<span style={{ color: colors.secondary }}>{siteConfig.siteNamePart2}</span>
+          </span>
+          <span className="hidden h-5 w-px bg-white/15 sm:block" />
+          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-[#8794A5] sm:block">Digital Studio</span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {navigationLinks.map((link) => (
             <a
               key={link.id}
               href={link.href}
-              className="text-gray-300 hover:text-white transition-colors uppercase text-sm tracking-wider"
+              className="text-sm text-[#B3BDCA] transition-colors hover:text-white"
             >
               {link.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-lg border border-[#A8B7CB]/25 px-4 py-2.5 text-sm font-medium text-[#E5EAF1] transition-colors hover:border-[#A8B7CB]/60 hover:bg-white/[0.04]"
+          >
+            Let&apos;s talk <ArrowUpRight size={15} />
+          </a>
         </nav>
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-white p-2"
-          aria-label="Toggle menu"
+          className="rounded-lg border border-white/10 p-2 text-[#E5EAF1] transition-colors hover:bg-white/[0.05] md:hidden"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-sm border-b border-white/10">
-          <nav className="flex flex-col py-4">
+        <div id="mobile-navigation" className="border-t border-white/[0.08] bg-[#10151D]/98 backdrop-blur-xl md:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-5 py-3 sm:px-6" aria-label="Mobile navigation">
             {navigationLinks.map((link) => (
               <a
                 key={link.id}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-gray-300 hover:text-white transition-colors uppercase text-sm tracking-wider px-6 py-3"
+                className="border-b border-white/[0.06] py-4 text-sm text-[#B3BDCA] transition-colors last:border-0 hover:text-white"
               >
                 {link.label}
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={handleLinkClick}
+              className="mt-3 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-[#10151D]"
+              style={{ backgroundColor: colors.secondary }}
+            >
+              Start a project <ArrowUpRight size={16} />
+            </a>
           </nav>
         </div>
       )}

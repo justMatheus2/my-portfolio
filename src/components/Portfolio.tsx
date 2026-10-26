@@ -1,114 +1,138 @@
-import { ImageWithFallback } from './ImageWithFallback';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { portfolioContent } from '../config/content';
 import { colors } from '../config/theme';
 
 export default function Portfolio() {
-  return (
-    <section id="projects" className="py-16 sm:py-20 md:py-24 bg-[#0a0a1a] relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="inline-block">
-            <div className="flex items-center gap-4 mb-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wider">
-                {portfolioContent.title}
-              </h2>
-              <div className="w-32 h-1" style={{ backgroundColor: colors.primary }}></div>
-            </div>
+  const [featuredProject, ...otherProjects] = portfolioContent.projects;
+
+  const ProjectCard = ({ project, index, featured = false }: {
+    project: (typeof portfolioContent.projects)[number];
+    index: number;
+    featured?: boolean;
+  }) => {
+    const hasLiveLink = project.link && project.link !== '#';
+
+    return (
+      <motion.article
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, delay: Math.min(index * 0.07, 0.28) }}
+        viewport={{ once: true, amount: 0.15 }}
+        className={`group min-w-0 overflow-hidden rounded-2xl border bg-[#171D27] transition-all duration-300 hover:-translate-y-1 ${featured ? 'md:grid md:grid-cols-[1.15fr_0.85fr]' : ''}`}
+        style={{ borderColor: colors.borderPrimary }}
+      >
+        <div className={`relative overflow-hidden bg-[#202A39] ${featured ? 'min-h-[260px] md:min-h-[360px]' : 'aspect-[16/10]'}`}>
+          <img
+            src={project.image}
+            alt={`Preview of ${project.title}`}
+            loading={featured ? 'eager' : 'lazy'}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            onError={(event) => {
+              // Keep the layout polished even if an external preview is unavailable.
+              event.currentTarget.style.display = 'none';
+              event.currentTarget.parentElement?.classList.add('project-image-unavailable');
+            }}
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#10151D]/35 via-transparent to-transparent" />
+          {featured && (
+            <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-[#10151D]/85 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-[#DCE5F0] backdrop-blur">
+              Featured project
+            </span>
+          )}
+        </div>
+
+        <div className={`flex min-w-0 flex-col ${featured ? 'justify-center p-6 sm:p-8 md:p-10' : 'p-5 sm:p-6'}`}>
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em]" style={{ color: colors.secondary }}>
+            {project.category}
+          </p>
+          <h3 className={`font-semibold leading-tight tracking-[-0.025em] text-[#F5F7FA] ${featured ? 'mb-4 text-2xl sm:text-3xl md:text-4xl' : 'mb-3 text-xl'}`}>
+            {project.title}
+          </h3>
+          {'description' in project && project.description && (
+            <p className={`leading-relaxed text-[#AAB4C2] ${featured ? 'mb-6 text-sm sm:text-base' : 'mb-5 text-sm'}`}>
+              {project.description}
+            </p>
+          )}
+
+          <div className="mb-6 flex flex-wrap gap-2">
+            {project.technologies.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-md border border-white/[0.08] bg-white/[0.035] px-2.5 py-1 text-[11px] text-[#C5CEDA]"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
-          <p className="text-gray-300 text-lg mt-6 max-w-3xl mx-auto">
+
+          {hasLiveLink ? (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto inline-flex w-fit items-center gap-2 text-sm font-medium text-[#C5D2E2] transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A8B7CB]"
+            >
+              View project
+              {featured ? <ArrowUpRight size={17} /> : <ExternalLink size={15} />}
+            </a>
+          ) : (
+            <span className="mt-auto inline-flex w-fit items-center gap-2 text-sm text-[#7E8A9B]" aria-label="Project preview not available yet">
+              Case study coming soon
+            </span>
+          )}
+        </div>
+      </motion.article>
+    );
+  };
+
+  return (
+    <section id="projects" className="relative bg-[#10151D] py-20 sm:py-24 md:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-10 max-w-2xl sm:mb-14 md:mb-16"
+        >
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: colors.secondary }}>
+            Selected work · 2024—2026
+          </p>
+          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-[#F5F7FA] sm:text-4xl md:text-5xl">
+            {portfolioContent.title}
+          </h2>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-[#AAB4C2] sm:text-lg">
             {portfolioContent.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioContent.projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-              className="group relative bg-gradient-to-br from-[#2a1a3e]/60 to-[#1a0a2e]/60 rounded-lg overflow-hidden border transition-colors cursor-pointer"
-              style={{ borderColor: colors.borderPrimary }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = colors.borderPrimaryHover;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = colors.borderPrimary;
-              }}
-            >
-              <div className="aspect-video overflow-hidden">
-                <ImageWithFallback
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
+        {featuredProject && (
+          <div className="mb-5 sm:mb-6">
+            <ProjectCard project={featuredProject} index={0} featured />
+          </div>
+        )}
 
-              <div className="p-6">
-                <div className="text-sm mb-2 uppercase tracking-wider" style={{ color: colors.secondary }}>
-                  {project.category}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-
-                {'description' in project && project.description && (
-                  <p className="text-gray-400 text-sm leading-relaxed mb-3">
-                    {project.description}
-                  </p>
-                )}
-
-                {'challenge' in project && project.challenge && (
-                  <div className="mb-3 p-3 rounded-md bg-[#1a0a2e]/80 border-l-2" style={{ borderColor: colors.secondary }}>
-                    <span className="text-xs uppercase tracking-wider font-semibold" style={{ color: colors.secondary }}>Challenge</span>
-                    <p className="text-gray-400 text-xs leading-relaxed mt-1">{project.challenge}</p>
-                  </div>
-                )}
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs rounded-full"
-                      style={{
-                        backgroundColor: `${colors.primary}33`,
-                        color: colors.primary
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <a
-                  href={project.link}
-                  target={project.link === '#' ? undefined : '_blank'}
-                  rel={project.link === '#' ? undefined : 'noopener noreferrer'}
-                  className="flex items-center gap-2 transition-colors"
-                  style={{ color: colors.secondary }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = colors.white;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = colors.secondary;
-                  }}
-                >
-                  <span className="text-sm">View Project</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-            </motion.div>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          {otherProjects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index + 1} />
           ))}
         </div>
       </div>
+      <style>{`
+        .project-image-unavailable::after {
+          content: 'Project preview';
+          display: grid;
+          place-items: center;
+          min-height: 100%;
+          padding: 2rem;
+          color: #A8B7CB;
+          font-size: 0.75rem;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          background: radial-gradient(ellipse at top right, #293649 0%, #202A39 45%, #171D27 100%);
+        }
+      `}</style>
     </section>
   );
 }
