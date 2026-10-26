@@ -1,8 +1,8 @@
-import heroImg from '../assets/hero-img.png';
-import eCommerceImg from '../assets/e-commerce.png';
-import bookingAppImg from '../assets/booking-app.png';
-import weatherAppImg from '../assets/weather-app.png';
-import aboutUsImg from '../assets/about-us.png';
+const heroImg = new URL('../assets/hero-img.png', import.meta.url).href;
+const eCommerceImg = new URL('../assets/e-commerce.png', import.meta.url).href;
+const bookingAppImg = new URL('../assets/booking-app.png', import.meta.url).href;
+const weatherAppImg = new URL('../assets/weather-app.png', import.meta.url).href;
+const aboutUsImg = new URL('../assets/about-us.png', import.meta.url).href;
 
 // ====================================
 // CONFIGURAÇÃO DE CONTEÚDO DO SITE
