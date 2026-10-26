@@ -7,7 +7,7 @@ import { colors } from '../config/theme';
 export default function Hero() {
   return (
     <section id="top" className="relative flex min-h-[92svh] items-center overflow-hidden bg-[#10151D] pt-20">
-      <div className="absolute inset-0 opacity-[0.075] grayscale">
+      <div className="absolute inset-0 opacity-[0.14] grayscale">
         <ImageWithFallback
           src={heroContent.backgroundImage}
           alt=""
@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: 'linear-gradient(90deg, #10151D 0%, rgba(16,21,29,.94) 42%, rgba(16,21,29,.70) 100%)' }}
+        style={{ background: 'linear-gradient(90deg, #10151D 0%, rgba(16,21,29,.88) 42%, rgba(16,21,29,.58) 100%)' }}
       />
       <div
         className="pointer-events-none absolute -right-32 top-1/4 h-96 w-96 rounded-full blur-3xl"
