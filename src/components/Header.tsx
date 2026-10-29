@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { siteConfig, navigationLinks } from '../config/content';
+import logo from '../assets/logo-no-bg.png';
+import { navigationLinks } from '../config/content';
 import { colors } from '../config/theme';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
 
   const handleLinkClick = () => {
     setIsMenuOpen(false);
@@ -12,11 +14,9 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[#10151D]/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 sm:px-6 lg:px-8">
         <a href="#top" className="inline-flex items-center gap-2" aria-label="MS TECH home">
-          <span className="text-xl font-semibold tracking-[-0.04em] text-[#F5F7FA] sm:text-2xl">
-            {siteConfig.siteNamePart1}<span style={{ color: colors.secondary }}>{siteConfig.siteNamePart2}</span>
-          </span>
+          <img src={logo} alt="MS TECH" className="h-16 w-auto sm:h-20" />
           <span className="hidden h-5 w-px bg-white/15 sm:block" />
           <span className="hidden text-[10px] uppercase tracking-[0.16em] text-[#8794A5] sm:block">Digital Studio</span>
         </a>
